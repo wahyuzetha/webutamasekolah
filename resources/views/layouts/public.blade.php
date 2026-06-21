@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SMKS Karya Nugraha Boyolali</title>
 
+        @if(!empty($settings['footer_logo_path']))
+            <link rel="icon" type="image/png" href="{{ asset('storage/' . $settings['footer_logo_path']) }}">
+        @else
+            <link rel="icon" href="/favicon.ico">
+        @endif
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
