@@ -68,6 +68,11 @@
                     <span class="font-medium">Ekstrakurikuler</span>
                 </a>
                 
+                <a href="{{ route('admin.achievements.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('admin.achievements.*') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
+                    <i class="fas fa-trophy w-5 text-center"></i>
+                    <span class="font-medium">Prestasi</span>
+                </a>
+                
                 <a href="{{ route('admin.teachers.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('admin.teachers.*') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
                     <i class="fas fa-users w-5 text-center"></i>
                     <span class="font-medium">Data Guru & Staf</span>

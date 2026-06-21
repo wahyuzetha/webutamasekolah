@@ -95,6 +95,7 @@
                                 <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Sejarah') }}</a>
                                 <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Visi & Misi') }}</a>
                                 <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Struktur Organisasi') }}</a>
+                                <a href="{{ route('achievements.public') }}" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Prestasi') }}</a>
                             </div>
                         </div>
 
@@ -198,7 +199,8 @@
                         <div x-show="subOpen" class="bg-gray-50 border-y border-gray-100" style="display: none;">
                             <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Sejarah') }}</a>
                             <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Visi & Misi') }}</a>
-                            <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide">{{ __('Struktur Organisasi') }}</a>
+                            <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Struktur Organisasi') }}</a>
+                            <a href="{{ route('achievements.public') }}" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide">{{ __('Prestasi') }}</a>
                         </div>
                     </div>
 

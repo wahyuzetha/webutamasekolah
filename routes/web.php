@@ -10,6 +10,7 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\ExtracurricularGalleryController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\AchievementController;
 use Illuminate\Support\Facades\Route;
 
 // Rute Ganti Bahasa
@@ -34,6 +35,8 @@ Route::get('/profil-kepala-sekolah', function () {
 
 Route::get('/jurusan/{major:slug}', [MajorController::class, 'showPublic'])->name('majors.show');
 Route::get('/ekstrakurikuler/{extracurricular:slug}', [ExtracurricularController::class, 'showPublic'])->name('extracurriculars.show');
+Route::get('/prestasi', [AchievementController::class, 'indexPublic'])->name('achievements.public');
+Route::get('/prestasi/{achievement:slug}', [AchievementController::class, 'showPublic'])->name('achievements.show');
 
 Route::get('/guru', function () {
     $teachers = \App\Models\Teacher::oldest()->get();
@@ -70,6 +73,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('extracurriculars/{extracurricular}/gallery', [ExtracurricularGalleryController::class, 'index'])->name('extracurriculars.gallery.index');
     Route::post('extracurriculars/{extracurricular}/gallery', [ExtracurricularGalleryController::class, 'store'])->name('extracurriculars.gallery.store');
     Route::delete('extracurriculars/{extracurricular}/gallery/{gallery}', [ExtracurricularGalleryController::class, 'destroy'])->name('extracurriculars.gallery.destroy');
+
+    // Manajemen Prestasi
+    Route::resource('achievements', AchievementController::class)->except(['show']);
 
     // Manajemen Pengaturan Profil Sekolah
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
