@@ -70,7 +70,7 @@
                                     </tr>
                                     <tr class="bg-white border-b border-gray-100">
                                         <th class="py-3 px-4 font-medium text-gray-600 whitespace-nowrap">{{ __('Jabatan') }}</th>
-                                        <td class="py-3 px-4 text-gray-700 break-words"><span class="hidden sm:inline mr-2">:</span>{{ app()->getLocale() == 'en' && $teacher->position_en ? $teacher->position_en : $teacher->position ?: '–' }}</td>
+                                        <td class="py-3 px-4 text-gray-700 break-words"><span class="hidden sm:inline mr-2">:</span>{{ (app()->getLocale() == 'en' && $teacher->position_en) ? $teacher->position_en : ($teacher->position ?: '–') }}</td>
                                     </tr>
                                     <tr class="bg-gray-50">
                                         <th class="py-3 px-4 font-medium text-gray-600 align-top whitespace-nowrap">{{ __('Alamat') }}</th>
