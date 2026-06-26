@@ -92,7 +92,7 @@
                                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                             </button>
                             <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-full left-0 w-60 bg-white border-t-[3px] border-[#c29431] shadow-xl py-3" style="display: none;">
-                                <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Sejarah') }}</a>
+                                <a href="{{ route('sejarah') }}" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Sejarah') }}</a>
                                 <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Visi & Misi') }}</a>
                                 <a href="#" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Struktur Organisasi') }}</a>
                                 <a href="{{ route('achievements.public') }}" class="block px-6 py-2.5 text-[13px] font-bold text-gray-600 hover:bg-gray-50 hover:text-[#c29431] transition uppercase tracking-wide">{{ __('Prestasi') }}</a>
@@ -197,7 +197,7 @@
                             <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': subOpen}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div x-show="subOpen" class="bg-gray-50 border-y border-gray-100" style="display: none;">
-                            <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Sejarah') }}</a>
+                            <a href="{{ route('sejarah') }}" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Sejarah') }}</a>
                             <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Visi & Misi') }}</a>
                             <a href="#" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide border-b border-gray-200/50">{{ __('Struktur Organisasi') }}</a>
                             <a href="{{ route('achievements.public') }}" class="block px-10 py-3 text-[13px] font-bold text-gray-500 hover:text-[#c29431] uppercase tracking-wide">{{ __('Prestasi') }}</a>

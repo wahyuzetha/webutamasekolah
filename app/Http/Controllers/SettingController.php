@@ -13,6 +13,12 @@ class SettingController extends Controller
         return view('admin.settings.index', compact('settings'));
     }
 
+    public function sejarah()
+    {
+        $settings = Setting::all()->pluck('value', 'key')->toArray();
+        return view('admin.settings.sejarah', compact('settings'));
+    }
+
     public function update(Request $request)
     {
         $data = $request->except(['_token', '_method', 'about_image', 'footer_logo']);
@@ -34,6 +40,6 @@ class SettingController extends Controller
             );
         }
 
-        return redirect()->route('admin.settings.index')->with('success', 'Pengaturan berhasil disimpan');
+        return redirect()->back()->with('success', 'Pengaturan berhasil disimpan');
     }
 }

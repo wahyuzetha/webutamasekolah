@@ -29,6 +29,10 @@ Route::get('/', function () {
 Route::get('/berita', [PostController::class, 'indexPublic'])->name('posts.public');
 Route::get('/berita/{post:slug}', [PostController::class, 'showPublic'])->name('posts.show');
 
+Route::get('/sejarah', function () {
+    return view('pages.sejarah');
+})->name('sejarah');
+
 Route::get('/profil-kepala-sekolah', function () {
     return view('pages.profil-kepala-sekolah');
 })->name('profil.kepala-sekolah');
@@ -79,6 +83,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     // Manajemen Pengaturan Profil Sekolah
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::get('/settings/sejarah', [SettingController::class, 'sejarah'])->name('settings.sejarah');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
 });
 

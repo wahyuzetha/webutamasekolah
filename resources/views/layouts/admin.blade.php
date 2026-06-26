@@ -82,9 +82,14 @@
                     <p class="px-4 text-xs font-semibold text-primary-400 uppercase tracking-wider">Pengaturan</p>
                 </div>
                 
-                <a href="{{ route('admin.settings.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('admin.settings.*') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
+                <a href="{{ route('admin.settings.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('admin.settings.index') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
                     <i class="fas fa-cogs w-5 text-center"></i>
                     <span class="font-medium">Profil Sekolah</span>
+                </a>
+
+                <a href="{{ route('admin.settings.sejarah') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('admin.settings.sejarah') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
+                    <i class="fas fa-landmark w-5 text-center"></i>
+                    <span class="font-medium">Sejarah Sekolah</span>
                 </a>
 
                 <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->routeIs('profile.edit') ? 'bg-primary-800 text-white shadow-md' : 'text-primary-200 hover:bg-primary-800 hover:text-white' }}">
