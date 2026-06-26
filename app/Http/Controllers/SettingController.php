@@ -21,7 +21,7 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        $data = $request->except(['_token', '_method', 'about_image', 'footer_logo']);
+        $data = $request->except(['_token', '_method', 'about_image', 'footer_logo', 'sejarah_image']);
 
         if ($request->hasFile('about_image')) {
             $path = $request->file('about_image')->store('settings', 'public');
@@ -31,6 +31,11 @@ class SettingController extends Controller
         if ($request->hasFile('footer_logo')) {
             $path = $request->file('footer_logo')->store('settings', 'public');
             $data['footer_logo_path'] = $path;
+        }
+
+        if ($request->hasFile('sejarah_image')) {
+            $path = $request->file('sejarah_image')->store('settings', 'public');
+            $data['sejarah_image_path'] = $path;
         }
 
         foreach ($data as $key => $value) {

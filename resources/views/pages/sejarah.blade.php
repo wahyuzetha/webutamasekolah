@@ -28,6 +28,12 @@
                 </div>
                 
                 <h2 class="text-3xl font-extrabold text-[#00123A] mb-8">{{ $settings['sejarah_title'] ?? __('Awal Mula Berdirinya SMKS Karya Nugraha Boyolali') }}</h2>
+
+                @if(!empty($settings['sejarah_image_path']))
+                    <div class="mb-8 rounded-2xl overflow-hidden shadow-lg border-4 border-gray-50 aspect-video relative">
+                        <img src="{{ asset('storage/' . $settings['sejarah_image_path']) }}" alt="{{ $settings['sejarah_title'] ?? 'Sejarah Sekolah' }}" class="w-full h-full object-cover">
+                    </div>
+                @endif
                 
                 <div class="prose prose-lg text-gray-600 max-w-none leading-relaxed space-y-6">
                     @if(!empty($settings['sejarah_content']))

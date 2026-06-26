@@ -12,7 +12,7 @@
             @endif
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-xl border border-gray-100 p-8">
-                <form action="{{ route('admin.settings.update') }}" method="POST" class="space-y-8">
+                <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-8">
                     @csrf
                     
                     <div class="pt-2">
@@ -41,6 +41,16 @@
                             <div>
                                 <x-input-label for="sejarah_title" value="Judul Konten" />
                                 <x-text-input id="sejarah_title" name="sejarah_title" type="text" class="mt-1 block w-full" :value="$settings['sejarah_title'] ?? 'Awal Mula Berdirinya SMKS Karya Nugraha Boyolali'" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <x-input-label for="sejarah_image" value="Foto Pendukung Sejarah (Opsional)" />
+                                <input type="file" id="sejarah_image" name="sejarah_image" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100" accept="image/*">
+                                @if(!empty($settings['sejarah_image_path']))
+                                    <div class="mt-2 text-sm text-gray-500">
+                                        Foto saat ini: <a href="{{ asset('storage/' . $settings['sejarah_image_path']) }}" target="_blank" class="text-primary-600 underline">Lihat Foto</a>
+                                    </div>
+                                @endif
                             </div>
 
                             <div>
